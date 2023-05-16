@@ -1,0 +1,37 @@
+.navBarFieldSet {
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px grey;
+    background-color: white;
+    border: none;
+    margin: 0 16px;
+}
+
+.navBarLegend {
+    text-align: center;
+}
+
+.navBar {
+  background-color: bisque;
+  border-radius: 20px;
+  user-select: none;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px grey;
+}
+
+.listItems {
+  list-style: none;
+  cursor: pointer;
+
+}
+
+.listItems:not(:last-child) {
+    margin-right: 8px;
+    padding-right: 8px;
+    border-right: 1px solid black;
+}

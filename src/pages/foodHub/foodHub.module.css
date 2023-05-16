@@ -1,0 +1,63 @@
+.menuSection {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.itemContainer {
+    display: flex;
+    margin-bottom: 16px;
+    padding: 8px  16px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid goldenrod;
+    border-radius: 20px;
+}
+
+.menuActionSection {
+    display: grid;
+    align-items: center;
+    gap: 12px;
+    grid-template-areas: 
+    'price priceInput priceInput'
+    'price add sub'
+    'price clear clear';
+}
+
+#menuPrice {
+    grid-area: price;
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: 12px;
+    color: white;
+    background-color: lightcoral;
+    letter-spacing: 1.5px;
+}
+
+#menuPriceInput {
+    grid-area: priceInput;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    border-radius: 8px;
+    border: 1px solid grey
+}
+
+#addButton {
+    grid-area: add;
+}
+
+#subButton {
+    grid-area: sub;
+}
+
+#clearButton {
+    grid-area: clear;
+}
+
+.menuActionButtons {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: bisque;
+    border: none;
+    box-shadow: 2px 2px 4px black;
+}
