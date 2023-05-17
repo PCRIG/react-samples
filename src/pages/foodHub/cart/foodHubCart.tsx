@@ -27,7 +27,7 @@ const FoodHubCart = () => {
     }
 
     if(items.length === 0) items.push(
-        <tr>
+        <tr key={'noItem'}>
             <td colSpan={4} id={styles.noItemAdded}>No item added</td>
         </tr>
     )

@@ -16,6 +16,10 @@
   user-select: none;
 }
 
+.navBar:hover {
+  background-color: wheat;
+}
+
 .listContainer {
   display: flex;
   justify-content: center;
@@ -27,7 +31,6 @@
 .listItems {
   list-style: none;
   cursor: pointer;
-
 }
 
 .listItems:not(:last-child) {
