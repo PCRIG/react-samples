@@ -1,0 +1,65 @@
+#itemTable {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+#totalHeader {
+    text-align: right;
+}
+
+#tableHeader th {
+    border-bottom: 1px solid black;
+}
+
+.cartSection {
+    margin:0 auto 16px;
+    padding: 16px 16px;
+    max-width: 1000px;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+.cartHeader {
+    margin: 0;
+    padding-bottom: 16px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.totalContainer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.itemData, #grandTotalText{
+    text-align: left;
+}
+
+.priceData, .quantityData {
+    text-align: center;
+}
+
+.totalData, #grandTotalValue {
+    text-align: right;
+}
+
+.itemContainer td {
+    padding: 16px 4px;
+}
+
+#tableHeader th {
+    padding: 8px 4px;
+}
+
+#cartTableFooter th, #cartTableFooter td {
+    padding: 8px 4px;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+}
+
+#noItemAdded{
+    text-align: center;
+    padding: 32px 0;
+}

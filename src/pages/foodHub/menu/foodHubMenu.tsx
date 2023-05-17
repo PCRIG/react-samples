@@ -1,5 +1,12 @@
 import { nanoid } from "@reduxjs/toolkit";
-import styles from "./foodHub.module.css";
+import styles from "./foodHubMenu.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addItemToCart,
+  cartSelector,
+  deleteItemFromCart,
+  removeItemFromCart,
+} from "../foodHubSlice";
 
 export interface MenuDetail {
   id: string;
@@ -20,39 +27,49 @@ const menuList: MenuDetail[] = [
   },
 ];
 
-const FoodHub = () => {
+const FoodHubMenu = () => {
+  const cartDetail = useSelector(cartSelector);
+  const dispatch = useDispatch();
+
   return (
     <>
       <section className={styles.menuSection}>
         {menuList &&
-          menuList.map((data, index) => {
+          menuList.map((data) => {
             return (
               <div key={data.title} className={styles.itemContainer}>
-                <div>{data.title}</div>
+                <h2>{data.title}</h2>
+
                 <div className={styles.menuActionSection}>
-                  <div id={styles.menuPrice}>{"₹" + data.price}</div>
+                  <p id={styles.menuPrice}>{"₹" + data.price}</p>
                   <input
                     type="number"
                     id={styles.menuPriceInput}
-                    value={0}
+                    value={
+                      data.id in cartDetail ? cartDetail[data.id].quantity : 0
+                    }
                     min={0}
                     max={10}
+                    readOnly={true}
                   />
                   <button
                     id={styles.addButton}
                     className={styles.menuActionButtons}
+                    onClick={(_) => dispatch(addItemToCart(data))}
                   >
                     '+' Add
                   </button>
                   <button
                     id={styles.subButton}
                     className={styles.menuActionButtons}
+                    onClick={(_) => dispatch(removeItemFromCart(data.id))}
                   >
                     '-' Sub
                   </button>
                   <button
                     id={styles.clearButton}
                     className={styles.menuActionButtons}
+                    onClick={(_) => dispatch(deleteItemFromCart(data.id))}
                   >
                     Clear
                   </button>
@@ -65,4 +82,4 @@ const FoodHub = () => {
   );
 };
 
-export default FoodHub;
+export default FoodHubMenu;

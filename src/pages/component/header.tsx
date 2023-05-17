@@ -10,12 +10,12 @@ const Header = () => {
   const navigate = useNavigate();
   const tabContents: TabModel[] = [
     {
-      title: "FoodHub",
-      path: "/foodHub",
+      title: "Menu",
+      path: "/menu",
     },
     {
-      title: "Test",
-      path: "/test",
+      title: "Cart",
+      path: "/cart",
     },
   ];
 
@@ -30,17 +30,15 @@ const Header = () => {
           <nav className={styles.navBar}>
             <ul className={styles.listContainer}>
               {tabContents &&
-                tabContents.map((data, index) => {
+                tabContents.map((data) => {
                   return (
-                    <>
-                      <li
-                        key={data.title}
-                        className={styles.listItems}
-                        onClick={(e) => onTabBarClick(data.path)}
-                      >
-                        {data.title}
-                      </li>
-                    </>
+                    <li
+                      key={data.title}
+                      className={styles.listItems}
+                      onClick={(e) => onTabBarClick(data.path)}
+                    >
+                      {data.title}
+                    </li>
                   );
                 })}
             </ul>
